@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		/*alert("Hello World")*/
+		/*console.log("hello world")*/
+	var name="sachin";
+	console.log(name);
+	var x=5;
+	var y=6;
+	console.log(x+y);
+
+	console.log(x>y);
+
+
+function pi(){
+	return 3.14;
+}
+function area_of_circle(radius){
+	area=pi()*radius*radius;
+	return area;
+}
+
+	console.log(area_of_circle(5));
+
+
+
+	</script>
+</head>
+<body>
+	<p id="output">default text</p>
+
+	<!-- using this method you can change text content at any instance. -->
+	<script type="text/javascript">
+		document.getElementById('output').innerHTML="new text";
+	</script>
+
+
+
+
+
+	<!-- js events    onclick -->
+	<p id="output1" onclick="change_text1()">click me</p>
+<script type="text/javascript">
+	function change_tex1(){
+		document.getElementById('output1').innerHTML="clicked";
+	}
+</script>
+	<!-- js events    onload -->
+	<p id="output2" onload=="change_text2()">click me</p>
+<script type="text/javascript">
+	function change_text2(){
+		document.getElementById('output2').innerHTML="clicked";
+	}
+</script>
+
+<!-- js events    onmouseover -->
+	<p id="output3" onmouseover="change_text3()">click me</p>
+<script type="text/javascript">
+	function change_text3(){
+		document.getElementById('output3').innerHTML="clicked";
+	}
+</script>
+<!-- js events    onmouseout -->
+	<p id="output4" onmouseout="change_text4()">click me</p>
+<script type="text/javascript">
+	function change_text4(){
+		document.getElementById('output4').innerHTML="clicked";
+	}
+</script>
+
+<!-- js events    onkeyup -->
+	<input type="" name="" id="output5" onkeyup="change_text5()">
+<script type="text/javascript">
+	function change_text5(){
+		document.getElementById('output5').innerHTML="clicked";
+	}
+</script>
+</body>
+</html>

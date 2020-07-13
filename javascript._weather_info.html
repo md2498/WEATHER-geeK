@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>WEATHER_INFO</title>
+	<link rel="stylesheet" type="text/css" href="weather.css">
+	
+</head>
+<body style="background-image: url('w1.jpg');" >
+	<marquee><h1 style="color: red;">Welcome to Indian WEATHER@geeK</h1></marquee>
+	
+
+	 
+	<p id="output"  style="text-align:center; color: blue">GET THE TEMPERATURE</p>
+	<P style="text-align:center;"><input id="city" placeholder ="enter the city name" style="text-align:center;color: blue"></P>
+	<p style="text-align:center; color:blue; "><button onclick="show_temp()">Submit</button></p>
+
+	<script type="text/javascript">
+		function show_temp(){
+			document.getElementById("output").style.color="red";
+			document.getElementById("output").style.fontSize ="20px";
+
+			
+
+			city=document.getElementById('city').value;
+			/*alert(user_number);*/
+			httpRequest=new XMLHttpRequest();
+			url="https://api.weatherbit.io/v2.0/current?city="+city+"&key=96278cfc30fe466cbab8435ddfab2898";
+			httpRequest.open("GET",url);
+			httpRequest.send();
+
+			httpRequest.onreadystatechange=function(){
+				if(this.readyState == 4 && this.status == 200){
+					user_data=JSON.parse(this.responseText);
+					document.getElementById("output").innerHTML=user_data.data[0].temp+" &#8451;";
+
+				}
+			}
+
+
+		}
+		 
+
+	</script>
+
+	<footer class="footer"  >
+	<div style="text-align: center;margin-top: 15px; color:white">
+		<b>Designed by Mukesh Kumar Dadarwal</b>
+	</div>
+	 <div align='center' style=" color:white">
+                
+                <br/>
+                <i><b>We welcome any feedback you'd like to give us. Feel free to e-mail us at</b>
+                    <b>
+                        <a href="" style="color: brown">mukeshkumarchoudhary05@gmail.com</a>
+                     with any requests, questions, comments, suggestions, or complaints.</b></i>
+                <br>
+                
+                <p>
+                    <b style="color:#aaaaaa">&copy;2020 All Rights Reserved &nbsp;&bull;&nbsp; Copyright 
+                    	.<b style="color:brown">mukeshchoudhary.com</b></b>
+                </p>
+            </div>
+</footer>
+
+
+</body>
+</html>
